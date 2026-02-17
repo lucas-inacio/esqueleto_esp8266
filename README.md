@@ -1,8 +1,8 @@
-# Monitor Biomédica
-Utilizado para monitorar umidade e temperatura enviando os dados para o Google Firebase.
+# Esqueleto de projeto para esp8266
+Inclui servidor web para permitir configuração de credenciais Wi-Fi
 
 ## Ferramentas necessárias
-O projeto usa como base a plataforma NodeMCU V2 (ESP8266). As seguintes dependências são necessárias:
+O projeto usa como base a plataforma ESP-01 (ESP8266). As seguintes dependências são necessárias:
 - arduino-cli
 - python 3
 
@@ -13,7 +13,6 @@ arduino-cli config add board_manager.additional_urls https://arduino.esp8266.com
 arduino-cli update
 arduino-cli core install esp8266:esp8266
 arduino-cli config set library.enable_unsafe_install true
-arduino-cli lib install "NTPClient"
 arduino-cli lib install --git-url https://github.com/me-no-dev/ESPAsyncTCP.git
 arduino-cli lib install --git-url https://github.com/me-no-dev/ESPAsyncWebServer.git
 ```
@@ -24,7 +23,7 @@ O projeto utiliza um layout de memória específico. As etapas abaixo devem ser 
 ### Gerando os arquivos web
 O diretório web contém as páginas do servidor. É necessário gerar um arquivo de cabeçalho para gravar as páginas no ESP8266.
 ```shell
-python compress_data.py -c ./esp8266_firebase/site_data.h ./web
+python compress_data.py -c ./esp8266/site_data.h ./web
 ```
 
 ### Arquivo de configuração
