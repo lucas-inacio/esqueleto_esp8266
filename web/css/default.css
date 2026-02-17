@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    font-size: 10;
+}
+
+button {
+    min-height: 5vh;
+    border-radius: 5px;
+    background-color: #87de96;
+    margin-top: 5px;
+}
+
+#delete {
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.collapsable, form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.collapsableContent {
+    height: 0;
+    overflow: hidden;
+    transition: height 1s, opacity 0.5s;
+    opacity: 0;
+}
+
+.collapsable:focus-within .collapsableContent {
+    height: 250px;
+    opacity: 100%;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.formGroup {
+    display: flex;
+    flex: row;
+}
+
+.formGroup * {
+    flex: 1;
+    margin-top: 4px;
+    min-height: 30px;
+}
+
+.header {
+    font-size: 30px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+textarea {
+    height: 80vh;
+    width: 100vw;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 50px;
+}
